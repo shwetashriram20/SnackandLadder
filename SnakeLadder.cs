@@ -18,12 +18,15 @@ namespace SnackandLadder
             const int ladder = 1;
             const int snake = 2;
             int temp = 0;
-           
+            int player = 0;
+            int player2 = 0;
+            int resultplayer = 0;
+
             while (currentPosition < endPosition)
             {
                 Random random = new Random();
-                int die = random.Next(1, 6); 
-                int move = random.Next(3);   
+                int die = random.Next(1, 6);
+                int move = random.Next(3);
                 switch (move)
                 {
                     case NoPlay:
@@ -62,8 +65,8 @@ namespace SnackandLadder
                     while (temp < endPosition)
                     {
                         Random random1 = new Random();
-                        int die1 = random.Next(1, 6); 
-                        int move1 = random.Next(3);   
+                        int die1 = random.Next(1, 6);
+                        int move1 = random.Next(3);
                         switch (move1)
                         {
                             case NoPlay:
@@ -89,13 +92,16 @@ namespace SnackandLadder
                             Console.WriteLine("die::{0} option::{1} position::{2}", die1, move1, temp);
                         }
                     }
-
+                    Console.WriteLine("die to win : " + player);
+                    Console.WriteLine("die to reach exact win : " + player2);
+                    resultplayer = player + player2;
+                    Console.WriteLine("the number of times dice rplayed : " + resultplayer);
                 }
             }
+            
         }
 
 
     }
 }
 
-                       
