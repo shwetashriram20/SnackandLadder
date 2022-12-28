@@ -10,20 +10,25 @@ namespace SnackandLadder
     {
         public static void Gamestart()
         {
-            int startPosition = 0;
-           
+            int startposition = 0;
             Random random = new Random();
-
             int dice = random.Next(1, 6);
-
-
-            Console.WriteLine("Snake and Ladder single player  : " + startPosition);
-            
-
-            Console.WriteLine("The Players dice number is  1 to 6 is : " + dice);
-
+            int move = random.Next(3);
+            const int NoPlay = 0;
+            const int snake = 1;
+            const int ladder = 2;
+            switch (move)
+            {
+                case NoPlay:
+                    break;
+                case snake:
+                    startposition = dice;
+                    break;
+                case ladder:
+                    startposition = startposition - dice;
+                    break;
+            }
+            Console.WriteLine("dice::{0},option::{1},position::{2}", dice, move, startposition);
         }
     }
 }
-    
-
